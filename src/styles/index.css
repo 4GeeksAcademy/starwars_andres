@@ -1,3 +1,13 @@
 /* 
     General Styles
 */
+.my-card {
+    border: 1px solid red;
+    min-width: 300px;
+}
+
+.my-carousel{
+    border: 1px solid black;
+    display: flex;
+    overflow-x: scroll;
+}

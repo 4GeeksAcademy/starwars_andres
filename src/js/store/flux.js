@@ -12,10 +12,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			people: [],
+			planets: [],
+			favorites: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
+			// Use getActions to call a function within a function
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
@@ -37,9 +40,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			setPeople: people => {
+				setStore({ people });
+			},
+			setPlanets: planets => {
+				setStore({ planets });
+			},
+			setFavorites: favorites => {
+				setStore({ favorites });
+			},
+			addFavorite: item => {
+				const store = getStore();
+				const updatedFavorites = [...store.favorites, item];
+				setStore({ favorites: updatedFavorites });
+			},
+			removeFavorite: item => {
+				const store = getStore();
+				const updatedFavorites = store.favorites.filter(fav => fav !== item);
+				setStore({ favorites: updatedFavorites });
 			}
 		}
 	};
 };
 
 export default getState;
+
