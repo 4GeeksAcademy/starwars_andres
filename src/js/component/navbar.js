@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { SearchBar } from "./SearchBar.jsx";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<div className="container">
 				<Link to="/">
 					<span className="navbar-brand mb-0 h1">StarWars</span>
 				</Link>
+				<SearchBar />
 				<div className="ml-auto">
 					<div className="dropdown">
 						<a className="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Favorites 0
+							Favorites {store.favorites.length}
 						</a>
 
-						<ul class="dropdown-menu">
-							<li><a className="dropdown-item" href="#">Action</a></li>
-							<li><a className="dropdown-item" href="#">Another action</a></li>
-							<li><a className="dropdown-item" href="#">Something else here</a></li>
+						<ul className="dropdown-menu">
+							{store.favorites.map((item, index) => (
+								<li key={index} className="dropdown-item">
+									{item.name}
+									<button className="btn btn-danger btn-sm" onClick={() => actions.removeFavorite(item)}>Remove</button>
+								</li>
+							))}
 						</ul>
 					</div>
 				</div>
 			</div>
-
 		</nav>
 	);
 };

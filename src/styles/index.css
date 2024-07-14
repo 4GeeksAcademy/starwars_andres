@@ -2,12 +2,60 @@
     General Styles
 */
 .my-card {
-    border: 1px solid red;
     min-width: 300px;
+    margin-right: 35px;
+}
+
+.my-card > div > img {
+    width: 100%;
+}
+
+.buttons-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-bod, .buttons-footer{
+    padding: 15px;
 }
 
 .my-carousel{
-    border: 1px solid black;
+    border: 1px solid grey;
     display: flex;
     overflow-x: scroll;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-input {
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.autocomplete-results {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-results .list-group-item {
+    cursor: pointer;
+}
+
+.autocomplete-results .list-group-item:hover {
+    background-color: #f0f0f0;
 }
