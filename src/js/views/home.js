@@ -1,110 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
+import { Characters } from "../component/Characters.jsx";
+import { Planets } from "../component/Planets.jsx";
+import { Vehicles } from "../component/Vehicles.jsx";
 
 export const Home = () => {
+    const { store } = useContext(Context);
 
-	return (
-
-		<>
-			<div className="container">
-				<h1 className="text-danger">Characters</h1>
-				<div className="my-carousel">
-					<div className="my-card">
-						<div>
-
-							<img src="" alt="" />
-
-						</div>
-
-						<div>
-
-							<p>Name</p>
-							<p>Gender</p>
-							<p>Hair color</p>
-							<p>Eye color</p>
-
-						</div>
-						<button>Learn More</button>
-						<button>C</button>
-					</div>
-					<div className="my-card">
-						<div>
-
-							<img src="" alt="" />
-
-						</div>
-
-						<div>
-
-							<p>Name</p>
-							<p>Gender</p>
-							<p>Hair color</p>
-							<p>Eye color</p>
-
-						</div>
-						<button>Learn More</button>
-						<button>C</button>
-					</div>
-					<div className="my-card">
-						<div>
-
-							<img src="" alt="" />
-
-						</div>
-
-						<div>
-
-							<p>Name</p>
-							<p>Gender</p>
-							<p>Hair color</p>
-							<p>Eye color</p>
-
-						</div>
-						<button>Learn More</button>
-						<button>C</button>
-					</div>
-					<div className="my-card">
-						<div>
-
-							<img src="" alt="" />
-
-						</div>
-
-						<div>
-
-							<p>Name</p>
-							<p>Gender</p>
-							<p>Hair color</p>
-							<p>Eye color</p>
-
-						</div>
-						<button>Learn More</button>
-						<button>C</button>
-					</div>
-					<div className="my-card">
-						<div>
-
-							<img src="" alt="" />
-
-						</div>
-
-						<div>
-
-							<p>Name</p>
-							<p>Gender</p>
-							<p>Hair color</p>
-							<p>Eye color</p>
-
-						</div>
-						<button>Learn More</button>
-						<button>C</button>
-					</div>
-
-				</div>
-			</div>
-		</>
-
-	)
+    return (
+        <>
+            <Characters />
+            <Planets />
+            <Vehicles />
+        </>
+    );
 };
+
+
+
+
+
 
 
